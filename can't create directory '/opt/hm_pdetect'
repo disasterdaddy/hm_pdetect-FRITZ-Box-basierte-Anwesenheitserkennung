@@ -1,0 +1,12 @@
+Ich versuchte die Anleitung zur Installation des ADD-ONs durchzuführen:
+  > Installation auf CCU als Addon
+  > Download des aktuellen Addon-Releases von Github (https://github.com/jens-maus/hm_pdetect/releases)
+  > Installation des Addon-Paketes (hm_pdetect-X.X.tar.gz) mittels WebUI Oberfläche der CCU
+  > Konfiguration des Addons über WebUI zugängliche Konfigurationswebseite
+Bei der manuellen Installation auf meinem RaspberryPi (Charly) erhielt ich gleich bei der ersten Anweisung einen Fehler.
+  root@raspberrymatic:/tmp# mkdir /opt/hm_pdetect
+  mkdir: can't create directory '/opt/hm_pdetect': Read-only file system
+Damit war die Installation erstmal beendet. Mit dem Kommando findmnt sah ich, dass root im Readonly Mode gesetzt ist. Wie komme ich da heraus?
+  root@raspberrymatic:/tmp# findmnt
+  TARGET          SOURCE         FSTYPE  OPTIONS
+  /               /dev/mmcblk0p2 ext4    ro,relatime
